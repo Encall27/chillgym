@@ -1,0 +1,55 @@
+name: gymwhenyouready
+description: "Track gym workouts and improvement over time."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Navigation
+  go_router: ^14.6.2
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Formatting (dates, numbers, units)
+  intl: ^0.19.0
+
+  # Persistence (JSON in shared_preferences for now; swap to Drift later via SessionRepository)
+  shared_preferences: ^2.3.3
+
+  # Charts
+  fl_chart: ^0.69.2
+
+  # Apple Health / Health Connect (mobile only — web is a no-op)
+  health: ^11.1.1
+
+  # Photo attachments — camera + gallery picker; path_provider for mobile storage
+  image_picker: ^1.1.2
+  path_provider: ^2.1.5
+
+  # Local notifications (mobile only — web is a no-op)
+  flutter_local_notifications: ^17.2.4
+  timezone: ^0.9.4
+
+  # Brand typography — Inter (body) + Fraunces serif italic (display in Warm)
+  google_fonts: ^6.2.1
+
+  # Native share sheet (iOS / Android) for the workout card + session photos.
+  share_plus: ^10.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true

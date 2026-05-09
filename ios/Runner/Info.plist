@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>ChillGym</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ChillGym</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.healthcare-fitness</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<!-- Skips the encryption-export-compliance form on every release. We don't
+	     ship custom crypto; only HTTPS / OS-level cipher use. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<!-- Required usage strings. Without these the app crashes the moment one
+	     of these capabilities is invoked, and Apple will reject the binary. -->
+	<key>NSCameraUsageDescription</key>
+	<string>ChillGym uses the camera so you can capture exercise and body progress photos for your own log. Photos stay on this device unless you choose to share them.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>ChillGym lets you attach existing photos from your library to exercises and body progress entries. We only read photos you pick.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>ChillGym saves your shared workout cards to your photo library when you tap Save.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>ChillGym reads your bodyweight and heart-rate data from Apple Health if you enable the integration in Profile.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>ChillGym writes finished workouts to Apple Health when the integration is enabled in Profile.</string>
+</dict>
+</plist>

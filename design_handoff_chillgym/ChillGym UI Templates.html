@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChillGym · Light & Dark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; height: 100%; background: #f1ede5; font-family: "Inter", system-ui, sans-serif; color: #1B1814; }
+  body { overflow: hidden; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="screens/warm-editorial.jsx"></script>
+<script type="text/babel" src="screens/dark-performance.jsx"></script>
+
+<script type="text/babel">
+  const { DesignCanvas, DCSection, DCArtboard, IOSDevice } = window;
+  const FRAME_W = 412;
+  const FRAME_H = 868;
+
+  function Phone({ children, dark }) {
+    return (
+      <IOSDevice width={FRAME_W} height={FRAME_H} dark={dark}>
+        {children}
+      </IOSDevice>
+    );
+  }
+
+  const SCREENS = [
+    { id: 'home', title: '01 · Home / Today',       subtitle: 'Greeting, streak, today\'s plan, recent sessions.', light: window.WarmEditorialHome,     dark: window.DarkPerformanceHome },
+    { id: 'live', title: '02 · Active Workout',     subtitle: 'In-session: rest timer, set logging, AI nudge.',    light: window.WarmEditorialActive,   dark: window.DarkPerformanceActive },
+    { id: 'prog', title: '03 · Progress',           subtitle: '1RM trend, PRs, time ranges.',                      light: window.WarmEditorialProgress, dark: window.DarkPerformanceProgress },
+    { id: 'cal',  title: '04 · Calendar / Streaks', subtitle: 'Heatmap, day detail, recent PRs.',                  light: window.WarmEditorialCalendar, dark: window.DarkPerformanceCalendar },
+  ];
+
+  function App() {
+    return (
+      <DesignCanvas
+        title="ChillGym · Light & Dark"
+        subtitle="Warm Editorial (light) + Dark Performance (dark). iPhone status bar respected; iOS nav bar at the top, tab bar at the bottom."
+      >
+        {SCREENS.map(s => (
+          <DCSection key={s.id} id={s.id} title={s.title} subtitle={s.subtitle}>
+            <DCArtboard id={`${s.id}-light`} label="Warm Editorial · Light" width={FRAME_W} height={FRAME_H}>
+              <Phone dark={false}><s.light /></Phone>
+            </DCArtboard>
+            <DCArtboard id={`${s.id}-dark`} label="Dark Performance · Dark" width={FRAME_W} height={FRAME_H}>
+              <Phone dark={true}><s.dark /></Phone>
+            </DCArtboard>
+          </DCSection>
+        ))}
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
