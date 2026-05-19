@@ -1,5 +1,5 @@
-name: gymwhenyouready
-description: "Track gym workouts and improvement over time."
+name: chillgym
+description: "ChillGym — track gym workouts and improvement over time."
 publish_to: 'none'
 version: 0.1.0+1
 
@@ -20,7 +20,7 @@ dependencies:
   flutter_riverpod: ^2.6.1
 
   # Formatting (dates, numbers, units)
-  intl: ^0.19.0
+  intl: ^0.20.0
 
   # Persistence (JSON in shared_preferences for now; swap to Drift later via SessionRepository)
   shared_preferences: ^2.3.3
@@ -29,7 +29,7 @@ dependencies:
   fl_chart: ^0.69.2
 
   # Apple Health / Health Connect (mobile only — web is a no-op)
-  health: ^11.1.1
+  health: ^13.3.1
 
   # Photo attachments — camera + gallery picker; path_provider for mobile storage
   image_picker: ^1.1.2
@@ -49,7 +49,34 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.1
+  flutter_native_splash: ^2.4.1
 
 flutter:
   uses-material-design: true
   generate: true
+
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "icons/icon_ios_1024.png"
+  remove_alpha_ios: true
+  adaptive_icon_background: "icons/icon_android_background_1024.png"
+  adaptive_icon_foreground: "icons/icon_android_foreground_1024.png"
+  web:
+    generate: true
+    image_path: "icons/icon_ios_1024.png"
+    background_color: "#FFF8EE"
+    theme_color: "#E0A82E"
+
+flutter_native_splash:
+  color: "#FFF8EE"
+  image: "icons/icon_android_foreground_1024.png"
+  color_dark: "#1F1A14"
+  image_dark: "icons/icon_android_foreground_1024.png"
+  android_12:
+    color: "#FFF8EE"
+    image: "icons/icon_android_foreground_1024.png"
+    color_dark: "#1F1A14"
+    image_dark: "icons/icon_android_foreground_1024.png"
+  web: false

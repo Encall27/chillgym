@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:gymwhenyouready/main.dart';
+import 'package:chillgym/main.dart';
 
 void main() {
   setUp(() {
@@ -11,7 +11,7 @@ void main() {
 
   testWidgets('App boots into the Home tab with hero + next-up cards',
       (WidgetTester tester) async {
-    await tester.pumpWidget(const ProviderScope(child: GymWhenYouReadyApp()));
+    await tester.pumpWidget(const ProviderScope(child: ChillGymApp()));
     await tester.pumpAndSettle();
 
     // The streak hero card always shows the ON FIRE eyebrow (prefixed by a
@@ -23,7 +23,7 @@ void main() {
 
   testWidgets('Tapping Calendar tab shows the heatmap legend',
       (WidgetTester tester) async {
-    await tester.pumpWidget(const ProviderScope(child: GymWhenYouReadyApp()));
+    await tester.pumpWidget(const ProviderScope(child: ChillGymApp()));
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Calendar'));
@@ -35,7 +35,7 @@ void main() {
 
   testWidgets('Starting a fresh session from the next-up card opens Active',
       (WidgetTester tester) async {
-    await tester.pumpWidget(const ProviderScope(child: GymWhenYouReadyApp()));
+    await tester.pumpWidget(const ProviderScope(child: ChillGymApp()));
     await tester.pumpAndSettle();
 
     // No templates seeded → next-up card headline reads "Open session".
