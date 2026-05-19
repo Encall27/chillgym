@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'app_localizations.dart';
 
 import '../domain/day_part.dart';
 import '../domain/feedback_engine.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/router.dart';
@@ -11,18 +11,18 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // No-op on web. On mobile, sets up the notifications plugin / channels.
   await NotificationService.instance.init();
-  runApp(const ProviderScope(child: GymWhenYouReadyApp()));
+  runApp(const ProviderScope(child: ChillGymApp()));
 }
 
-class GymWhenYouReadyApp extends ConsumerStatefulWidget {
-  const GymWhenYouReadyApp({super.key});
+class ChillGymApp extends ConsumerStatefulWidget {
+  const ChillGymApp({super.key});
 
   @override
-  ConsumerState<GymWhenYouReadyApp> createState() =>
-      _GymWhenYouReadyAppState();
+  ConsumerState<ChillGymApp> createState() =>
+      _ChillGymAppState();
 }
 
-class _GymWhenYouReadyAppState extends ConsumerState<GymWhenYouReadyApp> {
+class _ChillGymAppState extends ConsumerState<ChillGymApp> {
   late final _router = buildAppRouter();
 
   /// Decodes `en`, `zh`, `zh_HK` style tags into a Flutter [Locale]. Anything

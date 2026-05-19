@@ -7,7 +7,17 @@
       "Bash(flutter pub *)",
       "Bash(flutter analyze *)",
       "Bash(flutter test *)",
-      "Bash(flutter devices *)"
+      "Bash(flutter devices *)",
+      "Bash(git check-ignore *)",
+      "Read(//Users/encall/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//Applications/**)",
+      "Bash(grep -E '/bin/flutter$')",
+      "Bash(export PATH=\"$HOME/development/flutter/bin:$PATH\")",
+      "Bash(flutter gen-l10n *)",
+      "Bash(dart run *)",
+      "Bash(sed -i '' 's/GymWhenYouReadyApp/ChillGymApp/g' lib/main.dart test/widget_test.dart)",
+      "Bash(sed -i '' 's|package:gymwhenyouready/main.dart|package:chillgym/main.dart|' test/widget_test.dart)"
     ]
   }
 }
